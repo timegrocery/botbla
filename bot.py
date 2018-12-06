@@ -3,7 +3,6 @@
 import asyncio
 import discord
 import datetime
-import time
 import json
 import re
 
