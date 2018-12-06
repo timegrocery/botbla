@@ -3,7 +3,6 @@
 import asyncio
 import discord
 import datetime
-import json
 import re
 
 # Colorz define
