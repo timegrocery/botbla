@@ -11,7 +11,7 @@ botID = "424606447867789312" # IdleRPG
 channelID = channelList["main"]
 allChat = gameConfig["allChat"]
 delay = gameConfig["delay"]
-dungeonLevel = gameConfig["dungeonLevel"]
+dungeonLevel = 6
 maxRetry = gameConfig["maxRetry"]
 respondWaitTime = gameConfig["respondWaitTime"]
 
