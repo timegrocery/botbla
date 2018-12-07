@@ -1,10 +1,1 @@
-worker: python bot.py
-worker: python bot2.py
-worker: python bot3.py
-worker: python bot4.py
-worker: python bot5.py
-worker: python bot6.py
-worker: python bot7.py
-worker: python bot8.py
-worker: python bot9.py
-worker: python bot10.py
+worker: python bot.py & python bot2.py & python bot3.py & python bot4.py & python bot5.py & python bot6.py & python bot7.py & python bot8.py & python bot9.py & python bot10.py
