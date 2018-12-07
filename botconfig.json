@@ -25,7 +25,7 @@
         "dungeonLevel" : 2,
         "delay" : 600,
         "maxRetry" : 3,
-        "respondWaitTime" : 1.3,
+        "respondWaitTime" : 4,
         "allChat" : 1
     }
 }
