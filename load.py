@@ -15,7 +15,7 @@ gray = '\033[1m'
 highlight = '\033[4m'
 reset = '\033[0;0m'
 
-configPath = "config\\botconfig.json"
+configPath = "botconfig.json"
 def loadConfig(path):
 	with open(path) as configFile: # load config file
 		data = json.load(configFile)	# save data
