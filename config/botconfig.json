@@ -1,0 +1,31 @@
+{
+    "botList" : {
+        "bot2" : "NTEzMTU4MzA1Mjc5OTAxNzI3.Dup1jg.BxDiQ61wWdSXVSQ_Kqtt_NglDes",
+        "bot3" : "NTEzMTU5Njk4NTY0OTA3MDA5.Dup4Vw.vAaRXaCh6wGONa1XESiaOP0ZdxQ",
+        "bot4" : "NTEzMTYxMTg1MjQ0MjE3MzU3.Dup5gg.80aQeODghUFzU8jkhnZXVZ52C-I",
+        "bot5" : "NTEzMTYyNDYxMzE5MjY2MzMz.DuvkLg.x8Zsip94mPWjB8Kkb61MzHwllwU",
+        "bot6" : "NTEzMTYzMTczNzQzMDM0Mzcw.DuvlLw.bVJjcznC3guncl1i9vS_S-CP3XM",
+        "bot7" : "NTEzMTY0MTUwMjgxODYzMTc5.DuvmCQ.tBCJeCXqJpNnM-rjg8bP2UdtxTY",
+        "bot8" : "NTEzMTY0NzMyODAzNDQ4ODMz.Duvm9g.xc9fvIywHXBpSIpYCoRUFsteavE",
+        "bot9" : "NTEzMTY1Nzk4MjI3ODM2OTI4.Duvn9Q.LVKq1NDkX36LX8scqu9CmPinqaQ",
+        "bot10" : "NTEzMTY2MzY2NDk3NTcwODQw.DuvovQ.h11BPNqA30-AYR4sul9KtUhnB-k"},
+    "channelList" : {
+        "main" : "470648551475511333",
+        "craft" : "520160830776541196",
+        "bot2" : "520566688757055509",
+        "bot3" : "520566715482898435",
+        "bot4" : "520566727193395210",
+        "bot5" : "520566738736381964",
+        "bot6" : "520566751109578752",
+        "bot7" : "520566763331780638",
+        "bot8" : "520566774996140032",
+        "bot9" : "520566787444703242",
+        "bot10" : "520566801457741834"},
+    "gameConfig":{
+        "dungeonLevel" : 2,
+        "delay" : 600,
+        "maxRetry" : 3,
+        "respondWaitTime" : 1.3,
+        "allChat" : 1
+    }
+}
