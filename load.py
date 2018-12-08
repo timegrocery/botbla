@@ -1,5 +1,6 @@
 import json
 import datetime
+import random
 
 global now
 global now2
@@ -35,6 +36,8 @@ delay = gameConfig["delay"]
 allChat = gameConfig["allChat"]
 botID = "424606447867789312" # IdleRPG
 dungeonLevel = gameConfig["dungeonLevel"]
+minDelay = gameConfig["minDelay"]
+maxDelay = gameConfig["maxDelay"]
 
 text = "You have completed your dungeon and received"
 text2 = "You died on your mission. Try again!"
@@ -47,14 +50,18 @@ charDie = red + "Nhân vật đã chết trong chuyến thám hiểm." + blue + 
 charFree = blue + "Nhân vật hiện đang rảnh rỗi. Bắt đầu chuyến thám hiểm mới..." + reset
 exp = " điểm kinh nghiệm"
 goldReward = mag + " "* 35 + "{}" + green + " vàng" + reset
-itemReward = green + " "* 35 + "Vật phẩm: " + mag + {} + reset
-xpReward = mag + " "* 35 + {} + green + " điểm kinh nghiệm" + reset
+itemReward = green + " "* 35 + "Vật phẩm: " + mag + "{}" + reset
+xpReward = mag + " "* 35 + "{}" + green + " điểm kinh nghiệm" + reset
 stillAlive = blue + green + "Nhân vật vẫn còn sống và đang thám hiểm. Chờ tới lần kiểm tra tiếp theo."
-encryptedMessage = blue + message.author.id.strip() + reset + ": " + red + "Tin nhắn này chứa hình ảnh hoặc đã được mã hóa và gửi từ game bot. Bỏ qua..." + reset
+encryptedMessage = blue + "{}" + reset + ": " + red + "Tin nhắn này chứa hình ảnh hoặc đã được mã hóa và gửi từ game bot. Bỏ qua..." + reset
 validMessage = blue + "{}" + reset + ": " + "{}"
 statusCommand = "!s"
 dungeonCommand = "!a {}"
 inDungeon = blue + "Đang đưa nhân vật vào thám hiểm tầng " + mag + "{}" + blue + " ..." + reset
 enteredDungeon = green + "Đã đưa thành công nhân vật vào tầng " + mag + "{}" + green + " !" + reset
 timeOut = blue + red + "Code {}: Hết thời gian chờ phản hồi từ BOT. Đang thử lại lần " + mag + "{}" + reset
-succesLogin = green + 'Đã đăng nhập thành công vào tài khoản ' + blue + "{}" + reset + " (" + mag + "{}" + reset + ")"
+successLogin = green + 'Đã đăng nhập thành công vào tài khoản ' + blue + "{}" + reset + " (" + mag + "{}" + reset + ")"
+
+bDelay = delay - minDelay
+aDelay = delay + maxDelay
+delay = random.randint(bDelay,aDelay)
