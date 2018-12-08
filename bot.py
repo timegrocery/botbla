@@ -65,7 +65,7 @@ async def my_background_task():
 							print(reachMaxTimeOut)
 							break
 						await client.send_message(channel, dungeonCommand.format(str(dungeonLevel)))
-						await asyncio(0.3) # average ping is 3x ms
+						await asyncio.sleep(0.3) # average ping is 3x ms
 						responeFromBot2 = await client.wait_for_message(content=text5)
 						if str(responeFromBot2.author.id) == botID:
 							goodRespone2 = True
