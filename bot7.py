@@ -2,6 +2,8 @@ configPrefix = "bot7"
 
 
 
+
+
 global botList
 global channelList
 global gameConfig
@@ -29,7 +31,7 @@ client = discord.Client()
 
 async def my_background_task():
 	await client.wait_until_ready()
-	await asyncio.sleep(5)
+	await asyncio.sleep(5) # wait for everything loads properly
 	channel = discord.Object(id=channelID)
 	botAgent = discord.Object(id=botID)
 	while not client.is_closed:
@@ -42,10 +44,12 @@ async def my_background_task():
 				print (reachMaxTimeOut)
 				break
 			await client.send_message(channel, statusCommand)
+			await asyncio.sleep(0.3) # average ping is 3x ms
 			responeFromBot = await client.wait_for_message()
 			if str(responeFromBot.author.id) == botID and ((text in responeFromBot.content) or (text2 in responeFromBot.content) or (text3 in responeFromBot.content) or (text4 in responeFromBot.content)):
 				goodRespone = True
 				if text in responeFromBot.content or text2 in responeFromBot.content or text3 in responeFromBot.content:
+					await asyncio.sleep(3)
 					if text in responeFromBot.content:
 						match = re.match(r"You have completed your dungeon and received \*\*\$(.+)\*\* as well as a new weapon: \*\*(.+)\*\*\. Experience gained: \*\*(.+)\*\*\.", responeFromBot.content)
 						print(success)
@@ -57,7 +61,6 @@ async def my_background_task():
 					if text3 in responeFromBot.content:
 						print(charFree)
 					await asyncio.sleep(3)
-					await client.send_message(channel, dungeonCommand.format(str(dungeonLevel)))
 					print(inDungeon.format(str(dungeonLevel)))
 					goodRespone2 = False
 					maxTimes2 = 3
@@ -66,6 +69,8 @@ async def my_background_task():
 						if count2 > maxRetry:
 							print(reachMaxTimeOut)
 							break
+						await client.send_message(channel, dungeonCommand.format(str(dungeonLevel)))
+						await asyncio(0.3) # average ping is 3x ms
 						responeFromBot2 = await client.wait_for_message(content=text5)
 						if str(responeFromBot2.author.id) == botID:
 							goodRespone2 = True
@@ -82,6 +87,7 @@ async def my_background_task():
 			else:
 				count += 1
 				print (timeOut.format(1, str(count)))
+				await asyncio.sleep(respondWaitTime)
 		await asyncio.sleep(delay)
 
 
@@ -100,7 +106,7 @@ async def on_message(message):
 	if (message.author.id.strip() == botID or allChat == 1) and msger != "":
 		print(validMessage.format(message.author.id.strip(), msger))
 	if (message.author.id.strip() == botID or allChat == 1) and msger == "":
-		print(encryptedMessage)
+		print(encryptedMessage.format(message.author.id.strip()))
 
 
 
