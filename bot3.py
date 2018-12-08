@@ -82,7 +82,6 @@ async def my_background_task():
 			else:
 				count += 1
 				print (blue + now2 + red + "Code 1: Hết thời gian chờ phản hồi từ BOT. Đang thử lại lần " + mag + str(count) + reset)
-				await client.send_message(channel, "!status")
 		await asyncio.sleep(delay)
 
 
