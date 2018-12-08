@@ -22,15 +22,39 @@ def loadConfig(path):
 	botList = data["botList"]
 	channelList = data["channelList"]
 	gameConfig = data["gameConfig"]
+
 with open(configPath) as configFile: # load config file
 	data = json.load(configFile)	# save data
 botList = data["botList"]
 channelList = data["channelList"]
 gameConfig = data["gameConfig"]
 
+respondWaitTime = gameConfig["respondWaitTime"]
+maxRetry = gameConfig["maxRetry"]
+delay = gameConfig["delay"]
+allChat = gameConfig["allChat"]
+botID = "424606447867789312" # IdleRPG
+dungeonLevel = gameConfig["dungeonLevel"]
 
 text = "You have completed your dungeon and received"
 text2 = "You died on your mission. Try again!"
 text3 = "You are on no mission yet. Use `!adventure [DungeonID]` to go out on an adventure!"
 text4 = "You are currently in the adventure with difficulty"
 text5 = "Successfully sent your character out on an adventure. Use `!status` to see the current status of the mission."
+reachMaxTimeOut = blue + now2 + red + "Quá số lần chờ phản hồi từ BOT. Có thể BOT đã bị mất kết nối/vô hiệu hóa..." + reset
+success = green + "Chuyến thám hiểm đã thành công! Nhận được:"
+charDie = red + "Nhân vật đã chết trong chuyến thám hiểm." + blue + " Bắt đầu chuyến thám hiểm mới..." + reset
+charFree = blue + "Nhân vật hiện đang rảnh rỗi. Bắt đầu chuyến thám hiểm mới..." + reset
+exp = " điểm kinh nghiệm"
+goldReward = mag + " "* 35 + "{}" + green + " vàng" + reset
+itemReward = green + " "* 35 + "Vật phẩm: " + mag + {} + reset
+xpReward = mag + " "* 35 + {} + green + " điểm kinh nghiệm" + reset
+stillAlive = blue + now2 + green + "Nhân vật vẫn còn sống và đang thám hiểm. Chờ tới lần kiểm tra tiếp theo."
+encryptedMessage = blue + now2 + message.author.id.strip() + reset + ": " + red + "Tin nhắn này chứa hình ảnh hoặc đã được mã hóa và gửi từ game bot. Bỏ qua..." + reset
+validMessage = blue + now2 + "{}" + reset + ": " + "{}"
+statusCommand = "!s"
+dungeonCommand = "!a {}"
+inDungeon = blue + "Đang đưa nhân vật vào thám hiểm tầng " + mag + "{}" + blue + " ..." + reset
+enteredDungeon = green + "Đã đưa thành công nhân vật vào tầng " + mag + "{}" + green + " !" + reset
+timeOut = blue + now2 + red + "Code {}: Hết thời gian chờ phản hồi từ BOT. Đang thử lại lần " + mag + "{}" + reset
+succesLogin = green + 'Đã đăng nhập thành công vào tài khoản ' + blue + "{}" + reset + " (" + mag + "{}" + reset + ")"
