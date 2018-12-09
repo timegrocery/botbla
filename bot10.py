@@ -1,6 +1,8 @@
 configPrefix = "bot10"
 
 
+upperPrefix = configPrefix.upper()
+
 
 global botList
 global channelList
@@ -10,10 +12,10 @@ global botID
 from load import *
 
 
-
+terminalPrefix = terminalPre.format(upperPrefix)
 TOKEN = botList[configPrefix]
 channelID = channelList[configPrefix]
-
+dungeonLevel = dungeonList[configPrefix]
 
 
 import asyncio
@@ -50,41 +52,41 @@ async def my_background_task():
 					await asyncio.sleep(3)
 					if text in responeFromBot.content:
 						match = re.match(r"You have completed your dungeon and received \*\*\$(.+)\*\* as well as a new weapon: \*\*(.+)\*\*\. Experience gained: \*\*(.+)\*\*\.", responeFromBot.content)
-						print(success)
+						print(terminalPrefix + success)
 						print(goldReward.format(match.group(1)))
 						print(itemReward.format(match.group(2)))
 						print(xpReward.format(match.group(3)))
 					if text2 in responeFromBot.content:
-						print(charDie)
+						print(terminalPrefix + charDie)
 					if text3 in responeFromBot.content:
-						print(charFree)
+						print(terminalPrefix + charFree)
 					await asyncio.sleep(3)
-					print(inDungeon.format(str(dungeonLevel)))
+					print(terminalPrefix + inDungeon.format(str(dungeonLevel)))
 					goodRespone2 = False
 					maxTimes2 = 3
 					count2 = 0
 					while (goodRespone2 == False):
 						if count2 > maxRetry:
-							print(reachMaxTimeOut)
+							print(terminalPrefix + reachMaxTimeOut)
 							break
 						await client.send_message(channel, dungeonCommand.format(str(dungeonLevel)))
 						await asyncio.sleep(0.3) # average ping is 3x ms
 						responeFromBot2 = await client.wait_for_message(content=text5)
 						if str(responeFromBot2.author.id) == botID:
 							goodRespone2 = True
-							print (enteredDungeon.format(str(dungeonLevel)))
+							print (terminalPrefix + enteredDungeon.format(str(dungeonLevel)))
 							break
 						else:
 							count2 += 1
-							print (timeOut.format(2, str(count2)))
+							print (terminalPrefix + timeOut.format(2, str(count2)))
 							await asyncio.sleep(respondWaitTime)
 					break
 				if text4 in responeFromBot.content:
-					print(stillAlive)
+					print(terminalPrefix + stillAlive)
 					break
 			else:
 				count += 1
-				print (timeOut.format(1, str(count)))
+				print (terminalPrefix + timeOut.format(1, str(count)))
 				await asyncio.sleep(respondWaitTime)
 		await asyncio.sleep(delay)
 
