@@ -5,7 +5,6 @@ import random
 global now
 global now2
 
-
 mag = '\033[95m'
 blue = '\033[94m'
 green = '\033[92m'
@@ -15,6 +14,8 @@ white = '\033[0m'
 gray = '\033[1m'
 highlight = '\033[4m'
 reset = '\033[0;0m'
+now = datetime.datetime.now()
+now2 = blue + "[" + str(now.strftime("%Y-%m-%d %H:%M%p")) + "] " + reset
 
 configPath = "botconfig.json"
 def loadConfig(path):
@@ -35,7 +36,7 @@ maxRetry = gameConfig["maxRetry"]
 delay = gameConfig["delay"]
 allChat = gameConfig["allChat"]
 botID = "424606447867789312" # IdleRPG
-dungeonLevel = gameConfig["dungeonLevel"]
+dungeonList = gameConfig["dungeonLevel"]
 minDelay = gameConfig["minDelay"]
 maxDelay = gameConfig["maxDelay"]
 
@@ -61,6 +62,7 @@ inDungeon = blue + "Đang đưa nhân vật vào thám hiểm tầng " + mag + "
 enteredDungeon = green + "Đã đưa thành công nhân vật vào tầng " + mag + "{}" + green + " !" + reset
 timeOut = blue + red + "Code {}: Hết thời gian chờ phản hồi từ BOT. Đang thử lại lần " + mag + "{}" + reset
 successLogin = green + 'Đã đăng nhập thành công vào tài khoản ' + blue + "{}" + reset + " (" + mag + "{}" + reset + ")"
+terminalPre = blue + "[" + mag + "{}" + blue + "]: " + reset
 
 bDelay = delay - minDelay
 aDelay = delay + maxDelay
