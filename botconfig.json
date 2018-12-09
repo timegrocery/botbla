@@ -24,7 +24,7 @@
     "gameConfig":{
         "dungeonLevel" : 
             {
-                "main":7,
+                "main":8,
                 "bot1":5,
                 "bot2":5,
                 "bot3":5,
