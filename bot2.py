@@ -1,4 +1,4 @@
-configPrefix = "main"
+configPrefix = "bot2"
 
 
 upperPrefix = configPrefix.upper()
