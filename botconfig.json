@@ -24,7 +24,7 @@
     "gameConfig":{
         "dungeonLevel" : 
             {
-                "main":2,
+                "main":1,
                 "bot1":1,
                 "bot2":1,
                 "bot3":1,
@@ -36,9 +36,9 @@
                 "bot9":1,
                 "bot10":1
             },
-        "delay" : 600,
+        "delay" : 900,
         "maxRetry" : 3,
-        "respondWaitTime" : 4.20,
+        "respondWaitTime" : 3,
         "allChat" : 1,
         "minDelay" : 40,
         "maxDelay" : 40
