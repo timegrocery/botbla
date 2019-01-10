@@ -40,7 +40,7 @@ dungeonList = gameConfig["dungeonLevel"]
 minDelay = gameConfig["minDelay"]
 maxDelay = gameConfig["maxDelay"]
 
-callChannel = "532945506549366784"
+callChannel = "532949154272378890"
 gChannel = "531147601417076746"
 
 text = "You have completed your dungeon and received"
