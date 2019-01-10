@@ -40,6 +40,8 @@ dungeonList = gameConfig["dungeonLevel"]
 minDelay = gameConfig["minDelay"]
 maxDelay = gameConfig["maxDelay"]
 
+callChannel = "532945506549366784"
+
 text = "You have completed your dungeon and received"
 text2 = "You died on your mission. Try again!"
 text3 = "You are on no mission yet. Use `!adventure [DungeonID]` to go out on an adventure!"
