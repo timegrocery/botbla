@@ -66,6 +66,7 @@ enteredDungeon = green + "Đã đưa thành công nhân vật vào tầng " + ma
 timeOut = blue + red + "Code {}: Hết thời gian chờ phản hồi từ BOT. Đang thử lại lần " + mag + "{}" + reset
 successLogin = green + 'Đã đăng nhập thành công vào tài khoản ' + blue + "{}" + reset + " (" + mag + "{}" + reset + ")"
 terminalPre = blue + "[" + mag + "{}" + blue + "]: " + reset
+guildSuccess = green + "Tham gia chinh chiến cùng bang hội thành công!" + reset
 
 bDelay = delay - minDelay
 aDelay = delay + maxDelay
