@@ -97,12 +97,15 @@ async def my_background_task():
 async def on_message(message):
 	now = datetime.datetime.now()
 	now2 = blue + "[" + str(now.strftime("%Y-%m-%d %H:%M%p")) + "] " + reset
-	# we do not want the bot to reply to itself
+	msger = message.content
+	if message.channel.id.strip() == callChannel and msger.lower() == ">rush" and (message.author.id.strip() == "530422225510072320" or message.author.id.strip() == "423359966729076737"):
+		await client.send_message(gChannel, "guild adventure join")
+		print(terminalPrefix + guildSuccess)
+		await asyncio.sleep(10)
 	if message.author == client.user:
 		return
 	if message.channel.id.strip() != channelID: # phong-chung
 		return
-	msger = message.content
 	if (message.author.id.strip() == botID or allChat == 1) and msger != "":
 		print(validMessage.format(message.author.id.strip(), msger))
 	if (message.author.id.strip() == botID or allChat == 1) and msger == "":
