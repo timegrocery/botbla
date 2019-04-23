@@ -38,7 +38,7 @@
             },
         "delay" : 900,
         "maxRetry" : 3,
-        "respondWaitTime" : 3,
+        "respondWaitTime" : 5,
         "allChat" : 1,
         "minDelay" : 40,
         "maxDelay" : 40
