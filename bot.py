@@ -37,11 +37,14 @@ async def my_background_task():
 	YuiID = "577141901690667019" # Yui
 	levelYui = discord.Object(id=YuiID)
 	while not client.is_closed:
-		now = datetime.datetime.now()
-		now2 = blue + "[" + str(now.strftime("%Y-%m-%d %H:%M%p")) + "] " + reset
-		await client.send_message(channel, "!a 1")
-		await client.send_message(levelYui, ">exchange")
-		await asyncio.sleep(1810)
+		try:
+			now = datetime.datetime.now()
+			now2 = blue + "[" + str(now.strftime("%Y-%m-%d %H:%M%p")) + "] " + reset
+			await client.send_message(channel, "!a 1")
+			await client.send_message(levelYui, ">exchange")
+			await asyncio.sleep(1810)
+		except Exception as e:
+			pass
 
 async def yui():
 	await client.wait_until_ready()
@@ -49,10 +52,13 @@ async def yui():
 	YuiID = "577141901690667019" # Yui
 	levelYui = discord.Object(id=YuiID)
 	while not client.is_closed:
-		await client.send_message(levelYui, ">chop")
-		await client.send_message(levelYui, ">fish")
-		await client.send_message(levelYui, ">mine")
-		await asyncio.sleep(6.5)
+		try:
+			await client.send_message(levelYui, ">chop")
+			await client.send_message(levelYui, ">fish")
+			await client.send_message(levelYui, ">mine")
+			await asyncio.sleep(6.5)
+		except Exception as e:
+			pass
 	
 
 
