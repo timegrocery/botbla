@@ -52,7 +52,7 @@ async def yui():
 		await client.send_message(levelYui, ">chop")
 		await client.send_message(levelYui, ">fish")
 		await client.send_message(levelYui, ">mine")
-		await asyncio.sleep(5)
+		await asyncio.sleep(6.5)
 	
 
 
