@@ -86,4 +86,9 @@ async def on_ready():
 
 client.loop.create_task(my_background_task())
 client.loop.create_task(yui())
-client.run(TOKEN,bot = False)
+while True:
+	try:
+		client.loop.run_until_complete(client.start(TOKEN,bot = False))
+	except BaseException:
+			time.sleep(5)
+#client.run(TOKEN,bot = False)
