@@ -36,7 +36,7 @@
                 "bot9":1,
                 "bot10":1
             },
-        "delay" : 900,
+        "delay" : 1810,
         "maxRetry" : 3,
         "respondWaitTime" : 5,
         "allChat" : 1,
