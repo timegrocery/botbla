@@ -45,7 +45,7 @@ gChannel = "531147601417076746"
 
 text = "You have completed your dungeon and received"
 text2 = "You died on your mission. Try again!"
-text3 = "You are on no mission yet. Use `!adventure [DungeonID]` to go out on an adventure!"
+text3 = "You need to be on an adventure to use this command. Try `!adventure!`"
 text4 = "You are currently in the adventure with difficulty"
 text5 = "Successfully sent your character out on an adventure. Use `!status` to see the current status of the mission."
 reachMaxTimeOut = blue + red + "Quá số lần chờ phản hồi từ BOT. Có thể BOT đã bị mất kết nối/vô hiệu hóa..." + reset
