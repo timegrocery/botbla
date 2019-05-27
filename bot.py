@@ -40,6 +40,8 @@ async def my_background_task():
 		try:
 			now = datetime.datetime.now()
 			now2 = blue + "[" + str(now.strftime("%Y-%m-%d %H:%M%p")) + "] " + reset
+			await client.send_message(channel, "!s")
+			await asyncio.sleep(4)
 			await client.send_message(channel, "!a 1")
 			await client.send_message(levelYui, ">exchange")
 			await asyncio.sleep(1810)
@@ -59,7 +61,17 @@ async def yui():
 			await asyncio.sleep(6.5)
 		except Exception as e:
 			pass
-	
+async def yuidaily():
+	await client.wait_until_ready()
+	await asyncio.sleep(5)
+	YuiID = "577141901690667019" # Yui
+	levelYui = discord.Object(id=YuiID)
+	while not client.is_closed:
+		try:
+			await client.send_message(levelYui, ">daily")
+			await asyncio.sleep(42305)
+		except Exception as e:
+			pass
 
 
 # Threading event
@@ -92,6 +104,7 @@ async def on_ready():
 
 client.loop.create_task(my_background_task())
 client.loop.create_task(yui())
+client.loop.create_task(yuidaily())
 while True:
 	try:
 		client.loop.run_until_complete(client.start(TOKEN,bot = False))
