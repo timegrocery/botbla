@@ -27,17 +27,21 @@ import re
 # Start discord client
 client = discord.Client()
 
-
 async def my_background_task():
 	await client.wait_until_ready()
 	await asyncio.sleep(5) # wait for everything loads properly
 	channel = discord.Object(id=channelID)
 	botAgent = discord.Object(id=botID)
 	while not client.is_closed:
-		now = datetime.datetime.now()
-		now2 = blue + "[" + str(now.strftime("%Y-%m-%d %H:%M%p")) + "] " + reset
-		await client.send_message(channel, "!a 1")
-		await asyncio.sleep(1810)
+		try:
+			now = datetime.datetime.now()
+			now2 = blue + "[" + str(now.strftime("%Y-%m-%d %H:%M%p")) + "] " + reset
+			await client.send_message(channel, "!s")
+			await asyncio.sleep(5)
+			await client.send_message(channel, "!a 1")
+			await asyncio.sleep(1810)
+		except Exception as e:
+			pass
 
 
 # Threading event
