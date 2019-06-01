@@ -48,6 +48,7 @@ async def my_background_task():
 		except Exception as e:
 			pass
 
+
 async def yui():
 	await client.wait_until_ready()
 	await asyncio.sleep(5)
@@ -61,6 +62,7 @@ async def yui():
 			await asyncio.sleep(6.5)
 		except Exception as e:
 			pass
+		
 async def yuidaily():
 	await client.wait_until_ready()
 	await asyncio.sleep(5)
@@ -69,6 +71,12 @@ async def yuidaily():
 	while not client.is_closed:
 		try:
 			await client.send_message(levelYui, ">daily")
+			await client.send_message(levelYui, ",daily")
+			await asyncio.sleep(3)
+			await client.send_message(levelYui, ",dailygacha")
+			await client.send_message(levelYui, ",dailykeys")
+			await asyncio.sleep(2)
+			await client.send_message(levelYui, "!daily")
 			await asyncio.sleep(42305)
 		except Exception as e:
 			pass
